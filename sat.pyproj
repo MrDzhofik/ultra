@@ -16,7 +16,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>sat</Name>
     <RootNamespace>sat</RootNamespace>
-    <InterpreterId>MSBuild|sat_app|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -50,13 +50,15 @@
     <Content Include="app\Templates\login.html" />
     <Content Include="app\Templates\register.html" />
     <Content Include="app\Templates\user.html" />
+    <Content Include="app\Templates\edit_profile.html" />
+    <Content Include="app\Templates\_post.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="sat_app\">
-      <Id>sat_app</Id>
-      <Version>3.6</Version>
-      <Description>sat_app (Python 3.6 (32-bit))</Description>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
+      <Version>3.8</Version>
+      <Description>env1 (Python 3.8 (32-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
