@@ -1,4 +1,68 @@
-﻿
+﻿<style>
+    html {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color:orangered;
+        text-align:center;
+        list-style-type:none;
+    }
+
+    .navigator{
+        text-align:center;
+    }
+
+    .menu__list {
+        justify-content: center;
+        display: flex;
+        border-top:2px solid #c4c4c4;
+    }
+
+    .menu__list-link {
+        font-size: 20px;
+        line-height: 20px;
+        color: #000;
+        text-decoration: none;
+        display: block;
+        width: 300px;
+        padding: 20px 10px 20px;
+        list-style-type: none;
+        border-right: 1px solid #c4c4c4;
+        border-left: 1px solid #c4c4c4;
+        transition:all .3s;
+    }
+
+    .menu__list-item:first-child{
+        border-left:1px solid #c4c4c4;
+    }
+
+    .menu__list-item:last-child{
+        border-right:1px solid #c4c4c4;
+    }
+
+    .menu__list-link:hover{
+        color:#fff;
+        background-color:#000;
+    }
+    .menu__list-item {
+        list-style-type:none;
+    }
+
+    .register{
+        text-decoration:none;
+    }
+
+    .reg{
+        text-align:center;
+    }
+
+    .reg__title{
+        text-align:center;
+    }
+
+</style>
+
 <html>
 <head>
     {% if title %}
@@ -8,21 +72,29 @@
     {% endif %}
 </head>
 <body>
-    <div>
-        Microblog:
-        <a href="{{ url_for('index') }}">Home</a>
-        {% if current_user.is_anonymous %}
-        <a href="{{ url_for('login') }}">Login</a>
-        {% else %}
-        <a href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-        <a href="{{ url_for('logout') }}">Logout</a>
-        {% endif %}
-        {% if user == current_user %}
-        <p><a href="{{ url_for('edit_profile') }}">Edit your profile</a></p>
-        {% endif %}
-    </div>
+    <header class ="header">
+    <nav class = "navigator">
+        <ul class="menu__list">
+            <li class ="menu__list-item">
+                 <a class="menu__list-link" href="{{ url_for('index') }}">Главная</a>
+            </li>
+                 {% if current_user.is_anonymous %}
+            <li class ="menu__list-item">
+                <a class = "menu__list-link" href="{{ url_for('login') }}">Войти</a>
+            </li>
+                {% else %}
+            <li class ="menu__list-item">
+                 <a class = "menu__list-link" href="{{ url_for('user', username=current_user.username) }}">Профиль</a>
+            </li>
+            <li class ="menu__list-item">
+                 <a class = "menu__list-link" href="{{ url_for('logout') }}">Выйти</a>
+            </li>
+        </ul>
+                {% endif %}
+        
+    </nav>
+    </header>
 
-    <hr>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     <ul>
