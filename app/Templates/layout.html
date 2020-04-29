@@ -1,25 +1,26 @@
 ﻿<style>
-    html {
-        box-sizing: border-box;
-    }
-
     body {
-        background-color:orangered;
-        text-align:center;
-        list-style-type:none;
+        background: linear-gradient(315deg,powderblue,yellow,red);
+        text-align: center;
+    }
+    .user__img{
+        border-radius:50%;
     }
 
-    .navigator{
-        text-align:center;
+    .user__link{
+        text-decoration:none;
+        color:chartreuse;
+        font-family:Britannic;
     }
 
     .menu__list {
         justify-content: center;
         display: flex;
-        border-top:2px solid #c4c4c4;
     }
 
     .menu__list-link {
+        border-bottom: 2px solid #c4c4c4;
+        border-top: 2px solid #c4c4c4;
         font-size: 20px;
         line-height: 20px;
         color: #000;
@@ -30,7 +31,7 @@
         list-style-type: none;
         border-right: 1px solid #c4c4c4;
         border-left: 1px solid #c4c4c4;
-        transition:all .3s;
+        transition: all .3s;
     }
 
     .menu__list-item:first-child{
@@ -52,15 +53,6 @@
     .register{
         text-decoration:none;
     }
-
-    .reg{
-        text-align:center;
-    }
-
-    .reg__title{
-        text-align:center;
-    }
-
 </style>
 
 <html>
@@ -76,18 +68,18 @@
     <nav class = "navigator">
         <ul class="menu__list">
             <li class ="menu__list-item">
-                 <a class="menu__list-link" href="{{ url_for('index') }}">Главная</a>
+                 <a class="menu__list-link" href="{{ url_for('index') }}">Home</a>
             </li>
                  {% if current_user.is_anonymous %}
             <li class ="menu__list-item">
-                <a class = "menu__list-link" href="{{ url_for('login') }}">Войти</a>
+                <a class = "menu__list-link" href="{{ url_for('login') }}">Sign in</a>
             </li>
                 {% else %}
             <li class ="menu__list-item">
-                 <a class = "menu__list-link" href="{{ url_for('user', username=current_user.username) }}">Профиль</a>
+                 <a class = "menu__list-link" href="{{ url_for('user', username=current_user.username) }}">Profile</a>
             </li>
             <li class ="menu__list-item">
-                 <a class = "menu__list-link" href="{{ url_for('logout') }}">Выйти</a>
+                 <a class = "menu__list-link" href="{{ url_for('logout') }}">Logout</a>
             </li>
         </ul>
                 {% endif %}

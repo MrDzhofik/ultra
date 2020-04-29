@@ -37,6 +37,9 @@
     <Compile Include="app\routes.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="app\tests.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="app\__init__.py">
       <SubType>Code</SubType>
     </Compile>
