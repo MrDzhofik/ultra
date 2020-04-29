@@ -3,8 +3,9 @@
         background: linear-gradient(315deg,powderblue,yellow,red);
         text-align: center;
     }
-    .user__img{
-        border-radius:50%;
+    .user__img {
+        border-radius: 50%;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     }
 
     .user__link{
@@ -80,6 +81,9 @@
             </li>
             <li class ="menu__list-item">
                  <a class = "menu__list-link" href="{{ url_for('logout') }}">Logout</a>
+            </li>
+            <li class="menu__list-item">
+                <a class ="menu__list-link" href="{{ url_for('explore') }}">Explore</a>
             </li>
         </ul>
                 {% endif %}
