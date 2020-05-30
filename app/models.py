@@ -1,9 +1,11 @@
-from app import db
+from app import db, app
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from app import login
 from hashlib import md5
+from time import time
+import jwt
 
 followers = db.Table('followers',
     db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
@@ -30,7 +32,6 @@ class User(UserMixin, db.Model):
                 followers.c.follower_id == self.id).order_by(
                     Post.timestamp.desc())
 
-
     def follow(self, user):
        if not self.is_following(user):
            self.followed.append(user)
@@ -55,7 +56,31 @@ class User(UserMixin, db.Model):
                     digest, size)
 
     def __repr__(self):
-        return '<User {} email {}>'.format(self.username,self.email) 
+        return '<User {} email {}>'.format(self.username,self.email)
+
+    def get_reset_password_token(self, expires_in=600):
+        return jwt.encode(
+            {'reset_password': self.id, 'exp': time() + expires_in},
+            app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
+
+    @staticmethod
+    def verify_reset_password_token(token):
+        try:
+            id = jwt.decode(token, app.config['SECRET_KEY'],
+                            algorithms=['HS256'])['reset_password']
+        except:
+            return
+        return User.query.get(id)
+
+    def send_password_reset_email(user):
+        token = user.get_reset_password_token()
+        send_email('[Microblog] Reset Your Password',
+                   sender=app.config['ADMINS'][0],
+                   recipients=[user.email],
+                   text_body=render_template('email/reset_password.txt',
+                                             user=user, token=token),
+                   html_body=render_template('email/reset_password.html',
+                                             user=user, token=token))
 
 
     
@@ -68,7 +93,6 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
-
 
 
 @login.user_loader

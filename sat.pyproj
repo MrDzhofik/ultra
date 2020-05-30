@@ -16,7 +16,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>sat</Name>
     <RootNamespace>sat</RootNamespace>
-    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
     <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -32,6 +32,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\models.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\email.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="app\routes.py">
@@ -53,8 +56,11 @@
     <Content Include="app\Templates\layout.html" />
     <Content Include="app\Templates\login.html" />
     <Content Include="app\Templates\register.html" />
+    <Content Include="app\Templates\reset_password_request.html" />
+    <Content Include="app\Templates\reset_password.txt" />
     <Content Include="app\Templates\user.html" />
     <Content Include="app\Templates\edit_profile.html" />
+    <Content Include="app\Templates\reset_password.html" />
     <Content Include="app\Templates\_post.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
@@ -63,6 +69,15 @@
       <Id>env1</Id>
       <Version>3.8</Version>
       <Description>env1 (Python 3.8 (32-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X86</Architecture>
+    </Interpreter>
+    <Interpreter Include="env2\">
+      <Id>env2</Id>
+      <Version>3.8</Version>
+      <Description>env2 (Python 3.8 (32-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
