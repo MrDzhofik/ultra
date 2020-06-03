@@ -1,95 +1,52 @@
-﻿<style>
-    body {
-        background: linear-gradient(315deg,powderblue,yellow,red);
-        text-align: center;
-    }
-    .user__img {
-        border-radius: 50%;
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    }
-
-    .user__link{
-        text-decoration:none;
-        color:chartreuse;
-        font-family:Britannic;
-    }
-
-    .menu__list {
-        justify-content: center;
-        display: flex;
-    }
-
-    .menu__list-link {
-        border-bottom: 2px solid #c4c4c4;
-        border-top: 2px solid #c4c4c4;
-        font-size: 20px;
-        line-height: 20px;
-        color: #000;
-        text-decoration: none;
-        display: block;
-        width: 300px;
-        padding: 20px 10px 20px;
-        list-style-type: none;
-        border-right: 1px solid #c4c4c4;
-        border-left: 1px solid #c4c4c4;
-        transition: all .3s;
-    }
-
-    .menu__list-item:first-child{
-        border-left:1px solid #c4c4c4;
-    }
-
-    .menu__list-item:last-child{
-        border-right:1px solid #c4c4c4;
-    }
-
-    .menu__list-link:hover{
-        color:#fff;
-        background-color:#000;
-    }
-    .menu__list-item {
-        list-style-type:none;
-    }
-
-    .register{
-        text-decoration:none;
-    }
-</style>
-
-<html>
+﻿<html>
 <head>
     {% if title %}
     <title>{{ title }} - Microblog</title>
     {% else %}
     <title>Welcome to Microblog</title>
     {% endif %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="{{ url_for("static", filename="js/script.js") }}"></script>
+    <link href="{{ url_for("static", filename="css/style.css") }}" rel="stylesheet">
+    <link href="{{ url_for("static", filename="css/menu.css") }}" rel="stylesheet">
 </head>
 <body>
-    <header class ="header">
-    <nav class = "navigator">
-        <ul class="menu__list">
-            <li class ="menu__list-item">
-                 <a class="menu__list-link" href="{{ url_for('index') }}">Home</a>
-            </li>
-                 {% if current_user.is_anonymous %}
-            <li class ="menu__list-item">
-                <a class = "menu__list-link" href="{{ url_for('login') }}">Sign in</a>
-            </li>
-                {% else %}
-            <li class ="menu__list-item">
-                 <a class = "menu__list-link" href="{{ url_for('user', username=current_user.username) }}">Profile</a>
-            </li>
-            <li class ="menu__list-item">
-                 <a class = "menu__list-link" href="{{ url_for('logout') }}">Logout</a>
-            </li>
-            <li class="menu__list-item">
-                <a class ="menu__list-link" href="{{ url_for('explore') }}">Explore</a>
-            </li>
-        </ul>
-                {% endif %}
-        
-    </nav>
-    </header>
+    <div class="menu-wrap">
+        <input type="checkbox" class="toggler">
+        <div class="hamburger"><div></div></div>
+        <div class="menu">
+            <div>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="{{ url_for('index') }}"> Home</a>
+                        </li>
+                        {% if current_user.is_anonymous %}
+                        
+
+                        <li>
+                            <a href="{{ url_for('login') }}"> Sign in</a>
+                        </li>
+                        {% else %}
+                        
+
+                        <li>
+                            <a href="{{ url_for('user', username=current_user.username) }}"> Profile</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('logout') }}"> Logout</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('explore') }}"> Explore</a>
+                        </li>
+                    </ul>
+                        {% endif %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     {% with messages = get_flashed_messages() %}
     {% if messages %}
@@ -102,6 +59,5 @@
     {% endwith %}
 
     {% block content %}{% endblock %}
-    <div>Copyright 2020</div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 
 {% block content %}
-<h1>Hi, {{ current_user.username }}!</h1>
+<h1 class="user__greet">Hi, {{ current_user.username }}!</h1>
 {% if form %}
 <form action="" method="post">
     {{ form.hidden_tag() }}

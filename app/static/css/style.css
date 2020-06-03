@@ -1,0 +1,45 @@
+/* CORE STYLES */
+:root {
+    --primary-color: rgba(13, 110, 139, 0.75);
+    --overlay-color: rgba(24, 39, 51, 0.85);
+    --menu-speed: 0.75s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    justify-content:center;
+    text-align:center;
+    align-items:center;
+    background-color: #171919;
+    color: white;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 3rem;
+}
+.user__list{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.user__list-about{
+    display: flex;
+    display: inline-block;
+    padding: 5px 25px;
+}
+
+.user__img{
+    display: block;
+    border-radius: 50%;
+}
