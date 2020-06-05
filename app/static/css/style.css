@@ -43,3 +43,11 @@ body {
     display: block;
     border-radius: 50%;
 }
+
+.login__form{
+    padding: 20px 0;
+}
+
+.footer{
+    padding-top: 400px;
+}

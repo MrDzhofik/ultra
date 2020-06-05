@@ -3,7 +3,7 @@
 
 {% block content %}
 <h1>Sign In</h1>
-<form action="" method="post">
+<form  class='login__form' action="" method="post">
     {{ form.hidden_tag() }}
     <p>
         {{ form.username.label }}<br>
@@ -21,7 +21,6 @@
     <p>
         Forgot Your Password?
         <a href="{{ url_for('reset_password_request') }}">Click to Reset It</a>
-    </p>
     </p>
     <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
     <p>{{ form.submit() }}</p>
