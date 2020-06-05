@@ -1,8 +1,8 @@
-"""'reset_password'
+"""'footer'
 
-Revision ID: af3aae4523c0
+Revision ID: c181575d8401
 Revises: 
-Create Date: 2020-05-29 13:15:12.763896
+Create Date: 2020-06-05 21:45:27.656771
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'af3aae4523c0'
+revision = 'c181575d8401'
 down_revision = None
 branch_labels = None
 depends_on = None
