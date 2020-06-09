@@ -56,6 +56,7 @@
     <Content Include="app\static\css\style.css" />
     <Content Include="app\static\css\menu.css" />
     <Content Include="app\static\css\style_login.css" />
+    <Content Include="app\static\css\style_register.css" />
     <Content Include="app\static\images\bg1.jfif" />
     <Content Include="app\static\js\script.js" />
     <Content Include="app\Templates\email\reset_password.html" />
