@@ -1,4 +1,10 @@
 /* CORE STYLES */
+/*
+font-family: 'Caveat', cursive;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Luckiest Guy', cursive;
+*/
 :root {
     --primary-color: rgba(13, 110, 139, 0.75);
     --overlay-color: rgba(24, 39, 51, 0.85);
@@ -17,8 +23,6 @@ body {
     justify-content:center;
     text-align:center;
     align-items:center;
-    background-color: #171919;
-    color: white;
 }
 
 .container {

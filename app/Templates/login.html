@@ -1,30 +1,49 @@
-﻿{% extends "layout.html" %}
-
-
-{% block content %}
-<h1>Sign In</h1>
-<form  class='login__form' action="" method="post">
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.username.label }}<br>
-        {{ form.username(size=32) }}<br>
-        {% for error in form.username.errors %}
-        <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
-    </p>
-    <p>
-        {{ form.password.label }}<br>
-        {{ form.password(size=32) }}<br>
-        {% for error in form.password.errors %}
-        <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
-    <p>
-        Forgot Your Password?
-        <a href="{{ url_for('reset_password_request') }}">Click to Reset It</a>
-    </p>
-    <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-    <p>{{ form.submit() }}</p>
-</form>
-<p>New User? <a class = "register" href="{{ url_for('register') }}">Click to Sign up!</a></p>
-{% endblock %}
-
+﻿<html>
+<head>
+    {% if title %}
+    <title>{{ title }} - Microblog</title>
+    {% else %}
+    <title>Welcome to Microblog</title>
+    {% endif %}
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Josefin+Sans:wght@100&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/style_login.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/style_checkbox.css')}}" rel="stylesheet">
+</head>
+<body>
+    {% block content %}
+    <div class="form">
+        <h1>Sign In</h1>
+        <form action="" method="post" class="input-form">
+            {{ form.hidden_tag() }}
+            <p>
+                <input type="text" name="username" placeholder="Login" />
+                {% for error in form.username.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                <input type="password" name="password" placeholder="Password" />
+                {% for error in form.password.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                Forgot Your Password?
+                <a href="#" class="forgot_password">Click to Reset It</a>
+            </p>
+            <br />
+            <br />
+            <label for="remember" class="checkbox__label">
+                <input type="checkbox" id="remember" />
+                <span class="remember_me">Remember me</span>
+            </label>
+            <input type="submit" value="Sign in" class="submit" />
+        </form>
+        <p class="p__register">New User? <a class="register" href="{{ url_for('register') }}">Click to Sign up!</a></p>
+    {% endblock %}
+    </div>
+</body>
+</html>

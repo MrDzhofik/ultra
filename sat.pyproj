@@ -52,8 +52,11 @@
     <Compile Include="project_sat.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\static\css\style_checkbox.css" />
     <Content Include="app\static\css\style.css" />
     <Content Include="app\static\css\menu.css" />
+    <Content Include="app\static\css\style_login.css" />
+    <Content Include="app\static\images\bg1.jfif" />
     <Content Include="app\static\js\script.js" />
     <Content Include="app\Templates\email\reset_password.html" />
     <Content Include="app\Templates\email\reset_password.txt" />
