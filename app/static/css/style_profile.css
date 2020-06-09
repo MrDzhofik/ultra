@@ -1,0 +1,50 @@
+body{
+    background-color: #312828;
+    color: rgb(32, 221, 56);
+}
+
+.username {
+    display: block;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 75px;
+    margin-top: -5.5%;
+    margin-left: 7%;
+}
+
+.main__img{
+    display: block;
+    position: relative;
+    left: 35%;
+}
+
+.user__profile a {
+    border-top: 2px solid rgb(32, 221, 56);
+    border-bottom: 2px solid rgb(32, 221, 56);
+    border-right: 2px solid rgb(32, 221, 56);
+    border-left: 2px solid rgb(32, 221, 56);
+    text-decoration: none;
+    padding: 5px 15px;
+    margin: 0 105px;
+    color: #ed4a0e;
+}
+
+.user__link{
+    border-radius:50%; 
+}
+
+.follow{
+    border-radius: 50%;
+}
+
+.user__about {
+    padding: 40px;
+    margin-right: 50px;
+    font-size: 30px;
+    color: rgb(235, 240, 36)
+}
+
+.users__post{
+    text-decoration:none;
+    color: red;
+}

@@ -1,42 +1,46 @@
 ﻿{% extends "layout.html" %}
 
 {% block content %}
-<ul class="user__list">
-    <li class="user__list-about">
-        <img class="user__img" src="{{ user.avatar(128) }}">
-        <h1>{{ user.username }}</h1>
-    </li>
-    <li class="user__list-about">
-        {% if user.last_seen %}
-        <p>Last seen on: {{ user.last_seen }}</p>
-        {% endif %}
-    </li>
-    <li class="user__list-about">
-        <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
-        {% if user == current_user %}
-        <p><a class="user__link" href="{{ url_for('edit_profile') }}">Edit your profile</a></p>
-        {% endif %}
-    </li>
-    <li>
-        {% if user == current_user %}
-        <p><a href="{{ url_for('follow', username=user.username) }}">Follow</a></p>
-        {% else %}
-        <p><a href="{{ url_for('unfollow', username=user.username) }}">Unfollow</a></p>
-        {% endif %}
-    </li>
-</ul>
+<div class="user">
+    <img class="user__img main__img" src="{{ user.avatar(128) }}">
+    <h1 class="username">{{ user.username }}</h1>
+</div>
 <br />
-{% for post in posts %}
+<br />
+    <ul class="user__list">
+        <li class="user__list-about">
+            <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
+        </li>
+        <li class="user__list-about">
+            {% if user.last_seen %}
+            <p>Last seen on: {{ user.last_seen }}</p>
+            {% endif %}
+        </li>
+    </ul>
+    <div class="user__profile">
+        <br />
+        {% if user == current_user %}
+        <a class="follow" href="{{ url_for('follow', username=user.username) }}">Follow</a>
+        {% else %}
+        <a class="follow" href="{{ url_for('unfollow', username=user.username) }}">Unfollow</a>
+        {% endif %}
+        {% if user == current_user %}
+        <a class="user__link" href="{{ url_for('edit_profile') }}">Edit your profile</a>
+        {% endif %}
+    </div>
+    <div class="user__about">
+        {% if user.about_me %}
+        <p>{{ user.about_me }}</p>
+        {% endif %}
+    </div>
+    <br />
+    {% for post in posts %}
     {% include '_post.html' %}
-{% endfor %}
-{% if prev_url %}
-<a href="{{ prev_url }}">Newer posts</a>
-{% endif %}
-{% if next_url %}
-<a href="{{ next_url }}">Older posts</a>
-{% endif %}
-{% endblock %}
-
-<!--{% if user.about_me %}
-<p>{{ user.about_me }}</p>
-{% endif %}-->
+    {% endfor %}
+    {% if prev_url %}
+    <a href="{{ prev_url }}">Newer posts</a>
+    {% endif %}
+    {% if next_url %}
+    <a href="{{ next_url }}">Older posts</a>
+    {% endif %}
+    {% endblock %}

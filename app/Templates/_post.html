@@ -2,7 +2,7 @@
     <tr valign="top">
         <td><img class="user__img" src="{{ post.author.avatar(36) }}"></td>
         <td>
-            <a href="{{ url_for('user', username=post.author.username) }}">
+            <a class="users__post" href="{{ url_for('user', username=post.author.username) }}">
                 {{ post.author.username }}
             </a>
             says:<br>{{ post.body }}

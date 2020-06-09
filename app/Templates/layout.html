@@ -9,6 +9,7 @@
     <script src="{{ url_for("static", filename="js/script.js") }}"></script>
     <link href="{{ url_for("static", filename="css/style.css") }}" rel="stylesheet">
     <link href="{{ url_for("static", filename="css/menu.css") }}" rel="stylesheet">
+    <link href="{{ url_for("static", filename="css/style_profile.css") }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Josefin+Sans:wght@100&family=Lobster&display=swap" rel="stylesheet">
@@ -38,10 +39,10 @@
                             <a href="{{ url_for('user', username=current_user.username) }}"> Profile</a>
                         </li>
                         <li>
-                            <a href="{{ url_for('logout') }}"> Logout</a>
+                            <a href="{{ url_for('explore') }}"> Explore</a>
                         </li>
                         <li>
-                            <a href="{{ url_for('explore') }}"> Explore</a>
+                            <a href="{{ url_for('logout') }}"> Logout</a>
                         </li>
                     </ul>
                     {% endif %}

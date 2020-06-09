@@ -40,8 +40,8 @@ body {
         box-sizing: border-box;
     }
 
-        .input-form input[type="text"]:focus, .input-form input[type="password"]:focus, .reg input[type='email'] {
-            border: 1px solid #0fc3f5;
+        .reg input[type="text"]:focus, .reg input[type="password"]:focus, .reg input[type='email']:focus {
+            border: 2px solid #0fc3f5;
         }
 
         .reg input[type="submit"] {
