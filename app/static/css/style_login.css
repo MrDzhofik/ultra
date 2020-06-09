@@ -72,10 +72,6 @@ body {
 	color: #0fc3f5;
 }
 
-.p__register{
-	text-align: center;
-	align-items: center;
-}
 
 .forgot_password{
 	display: block;
@@ -83,16 +79,23 @@ body {
 	color: white;
 }
 
-.register{
+.p__register {
+	text-align: center;
+	align-items: center;
+}
+
+.aregister{
 	text-decoration: none;
-	color: aquamarine;
+	color: red;
 }
 
 .forgot_password:hover{
 	color: #0fc3f5;
 	transition: 1s;
 }
-.register:hover {
+
+
+.aregister:hover{
 	color: #0fc3f5;
 	transition: 1s;
 }
