@@ -5,19 +5,16 @@
 <form action="" method="post">
     {{ form.hidden_tag() }}
     <p>
-        {{ form.username.label }}<br>
-        {{ form.username(size=32) }}<br>
+        <input class="edit__username" type="text" name="username" placeholder="Username" />
         {% for error in form.username.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
     </p>
-    <p>
-        {{ form.about_me.label }}<br>
-        {{ form.about_me(cols=50, rows=4) }}<br>
+        <p class="edit__label">About me</p>
+        <textarea name="about_me" class="edit__textarea"></textarea>
         {% for error in form.about_me.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
-    </p>
-    <p>{{ form.submit() }}</p>
+    <p><input type="submit" name="submit" value="Submit" class="edit__submit"/></p>
 </form>
 {% endblock %}

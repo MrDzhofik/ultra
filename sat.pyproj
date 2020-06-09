@@ -55,6 +55,7 @@
     <Content Include="app\static\css\style_checkbox.css" />
     <Content Include="app\static\css\style.css" />
     <Content Include="app\static\css\menu.css" />
+    <Content Include="app\static\css\style_edit.css" />
     <Content Include="app\static\css\style_home.css" />
     <Content Include="app\static\css\style_login.css" />
     <Content Include="app\static\css\style_profile.css" />
