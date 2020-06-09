@@ -4,17 +4,17 @@
 {% block content %}
 <h1 class="user__greet">Hi, {{ current_user.username }}!</h1>
 {% if form %}
-<form action="" method="post">
+<form action="" method="post" class="home__form">
     {{ form.hidden_tag() }}
-    <p>
-        {{ form.post.label }}<br>
-        {{ form.post(cols=32, rows=4) }}<br>
+    <p class="label">
+        Say something
+    </p>
+        <textarea class="textarea"></textarea>
         {% for error in form.post.errors %}
         <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
-    </p>
     <p>
-        {{ form.submit() }}
+        <input type="submit" class="home__submit" name="submit" value="Submit" />
     </p>
 </form>
 {% endif %}
@@ -24,9 +24,9 @@
 </p>
     {% endfor %}
 {% if prev_url %}
-<a href="{{ prev_url }}">Newer posts</a>
+<a class="switch" href="{{ prev_url }}">Newer posts</a>
 {% endif %}
 {% if next_url %}
-<a href="{{ next_url }}">Older posts</a>
+<a class="switch" href="{{ next_url }}">Older posts</a>
 {% endif %}
 {% endblock %}

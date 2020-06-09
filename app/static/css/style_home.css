@@ -1,0 +1,32 @@
+body
+{
+}
+
+.user__greet{
+    padding: 15px 0;
+}
+
+.home__form{
+    padding: 10px 0;
+}
+
+.label {
+    padding-bottom: 60px;
+    padding-top: 50px;
+    font-size: 25px;
+}
+
+.textarea {
+    padding: 50px;
+    background-color: #C1B510;
+    color: #000000;
+    border-radius: 20px;
+}
+
+.home__submit {
+    width: 70px;
+    height: 35px;
+    margin-top: 50px;
+    background-color: #312828;
+    color: #2bcbbd;
+}
