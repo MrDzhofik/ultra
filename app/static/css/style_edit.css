@@ -30,3 +30,16 @@ body
     background-color: #312828;
     color: #2bcbbd;
 }
+
+
+.switch{
+    background-color: transparent;
+}
+
+.right {
+    background-image: url(../images/right.jpg);
+}
+
+.left{
+    background-image: url(../images/left.jpg);
+}

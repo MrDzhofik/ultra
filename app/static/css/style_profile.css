@@ -48,3 +48,14 @@ body{
     text-decoration:none;
     color: red;
 }
+
+@media (max-width: 1480px) {
+    .username {
+        padding-bottom: 0px;
+        margin-top: 1.5%;
+        margin-left: 0%;
+    }
+    .main__img{
+        left: 45%;
+    }
+}

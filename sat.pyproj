@@ -61,6 +61,8 @@
     <Content Include="app\static\css\style_profile.css" />
     <Content Include="app\static\css\style_register.css" />
     <Content Include="app\static\images\bg1.jfif" />
+    <Content Include="app\static\images\left.jpg" />
+    <Content Include="app\static\images\right.jpg" />
     <Content Include="app\static\js\script.js" />
     <Content Include="app\Templates\email\reset_password.html" />
     <Content Include="app\Templates\email\reset_password.txt" />

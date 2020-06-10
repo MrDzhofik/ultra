@@ -24,9 +24,9 @@
 </p>
     {% endfor %}
 {% if prev_url %}
-<a class="switch" href="{{ prev_url }}">Newer posts</a>
+<a class="switch right" href="{{ prev_url }}">Newer posts</a>
 {% endif %}
 {% if next_url %}
-<a class="switch" href="{{ next_url }}">Older posts</a>
+<a class="switch left" href="{{ next_url }}">Older posts</a>
 {% endif %}
 {% endblock %}
